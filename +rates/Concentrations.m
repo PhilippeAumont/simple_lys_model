@@ -46,7 +46,7 @@ function dC = Concentrations(Ca, J, I, p)
   dCa_ss = B_ss*(J_rel*p.V_JSR/p.V_ss - J_xfer*p.V_cyt/p.V_ss...
           - I_ecav_CaL*p.A_cap*p.C_m/(2*p.V_ss*p.F));
   dCa_JSR = B_JSR*(J_tr - J_rel);
-  dCa_NSR = (J_up - J_leak)*p.V_cyt/p.V_NSR - J_tr*p.V_JSR/p.V_NSR;
+  dCa_NSR = (J_up - J_leak)*p.V_cyt/p.V_NSR - J_tr*p.V_JSR/p.V_NSR - J_rel_md;
   dCa_md = B_md*(J_rel_md*p.V_NSR/p.V_md - J_TPC - J_xfer_md*p.V_cyt/p.V_md);
 
   %Sodium

@@ -58,7 +58,7 @@ end
 %Then fill out the setting below, and run this main file to start the simulation.
 
 %Stimulation protocols:
-p.protocol = "two_spikes";
+p.protocol = "train";
 p.NAADP_protocol = "cte";
 p.NAADP_C = 0.005;    %[uM], K_a is 0.03
 p.OCaR = 0.10;       %TPC control by OCaR. Scalar controlling J_TPC.
@@ -87,7 +87,7 @@ p.stim_dur = 1;%[ms]
 p.stim_amp = -80;%[mV]
 p.stim_k = 100000;     %Sharpness of the stimulation current curve
 p.stim_2nd_start = 2000; %for two_spikes_smooth [ms]
-p.stim_period = 200;    %For train_smooth [ms]
+p.stim_period = 1000;    %For train_smooth [ms]
 
 %NAADP settings
 p.NAADP_k1 = 0.001;%Used for sig
@@ -106,8 +106,8 @@ p.NAADP_stim_start = 1000; %[ms]
 p.NAADP_stim_dur = 10;%[ms]
 
 %Simulation settings
-p.extra_var = true(); %whether to calculate+record currents and fluxes, can be time consuming
-tspan = [0, 5000];
+p.extra_var = false(); %whether to calculate+record currents and fluxes, can be time consuming
+tspan = [0, 10000];
 pt_interval = 0.1;%[ms], time step at which to interpolate state variables
 
 %===============================================================================
